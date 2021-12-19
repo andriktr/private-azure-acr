@@ -81,9 +81,7 @@ terraform apply -var-file="environments\dev\variables.tfvars" --auto-approve
 
 * If your AKS cluster is provisioned in a separate vNet then you need to link a private DNS used for the ACR private endpoint to that vNet. Same is valid for all other vNets from which you would like to resolve ACR. If you would like to link any additional vNets with ACR private DNS use this [module](terraform/modules/dns-vnet-link/)
 
-
-
-* If you disable public endpoint for your ACR then you need to make sure that you are able to connect to your ACR private endpoint. For example you have ExpressRoute connection to your ACR private endpoint VNet or if this connection is within Azure Network you have a peering between your ACR private endpoint VNet and VNet from which you would like to access ACR.
+* If you disable public access for your ACR then you need to make sure that you are able to connect to your ACR private endpoint. For example you have ExpressRoute connection to your ACR private endpoint VNet or if this connection is within Azure Network you have a peering between your ACR private endpoint VNet and VNet from which you would like to access ACR.
 
 ## Remove
 
