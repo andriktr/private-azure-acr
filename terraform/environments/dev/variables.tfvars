@@ -18,7 +18,7 @@ acr_private_endpoint_subnet_cidr = ""
 
 acr_private_endpoint_subnet_name = ""
 
-acr_name = "sysadminasdevacr"
+acr_name = ""
 
 additional_source_vnets = {
   "aks-vnet": {
