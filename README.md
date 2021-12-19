@@ -27,11 +27,11 @@ This repository contains terraform configuration to deploy an Azure Container Re
 
 For terraform configuration use the following variable files
 
-* [azure/environements/dev/variables.tfvars](azure/environement/dev/variables.tfvars) - Describes unique values for dev environment
+* [terraform/environements/dev/variables.tfvars](terraform/environement/dev/variables.tfvars) - Describes unique values for dev environment
   
-* [azure/environements/$env/variables.tfvars](azure/environement/$env/variables.tfvars) - Create a directory for your specific environment like stage, prod etc.
+* [terraform/environements/$env/variables.tfvars](terraform/environement/$env/variables.tfvars) - Create a directory for your specific environment like stage, prod etc.
 
-* [azure/variables.tf](azure/variables.tf) - Describes all variables and sets default values which are common for all environments
+* [terraform/variables.tf](terraform/variables.tf) - Describes all variables and sets default values which are common for all environments
 
 Variable | Description | Type | Default Value
 -------- | ------------|------| --------------
@@ -50,8 +50,8 @@ additional_source_vnets | Map of additional source virtual networks to be linked
 
 ## Test
 
-> **Note:** Commands listed bellow written with assumption that you in [terraform](terrafom/) directory.
----
+> **Note:** Commands listed bellow written with assumption that you in [terraform](terraform/) directory.
+
 Please do not forget to set `access_key` in [backend-config](/terraform/environment/dev/backend-config.tfvars) or alternatively you can retrieve storage account key with:
 
 ```bash
