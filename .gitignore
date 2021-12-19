@@ -33,3 +33,5 @@ terraform/environments/dev-set/*
 
 /terraform/environments/dev-set
 /terraform/environments/dev-set/*
+
+.terraform.lock.hcl
