@@ -34,11 +34,13 @@ resource "azurerm_container_registry" "acr" {
   tags                          = var.tags 
 }
 
+# Create azure container registry private endpoint
 resource "azurerm_private_dns_zone" "acr_private_dns_zone" {
   name                = "privatelink.azurecr.io"
   resource_group_name =  azurerm_resource_group.acr_resource_group.name
 }
 
+# Create azure private dns zone virtual network link for acr private endpoint vnet
 resource "azurerm_private_dns_zone_virtual_network_link" "acr_private_dns_zone_virtual_network_link" {
   name                  = "${var.acr_name}-private-dns-zone-vnet-link"
   private_dns_zone_name = azurerm_private_dns_zone.acr_private_dns_zone.name
@@ -47,6 +49,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "acr_private_dns_zone_v
   tags                  = var.tags
 }
 
+# Create azure private endpoint
 resource "azurerm_private_endpoint" "acr_private_endpoint" {
   name                = "${var.acr_name}-private-endpoint"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
@@ -78,7 +81,8 @@ resource "azurerm_private_endpoint" "acr_private_endpoint" {
   ]
 }
 
-module "name" {
+# Load this module if you want to link additional VNets with Azure Container Registry private endpoint private DNS zone
+module "add_dns_vnet_link" {
   source = "./modules/dns-vnet-link"
   
   for_each                     = var.additional_source_vnets
