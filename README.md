@@ -89,7 +89,7 @@ In order to remove terraform configuration you can use the following commands:
 
 ```bash
 terraform plan -var-file="environments\dev\variables.tfvars" -destroy
-terraform apply -var-file="environments\dev\variables.tfvars" -destroy -auto-approve
+terraform destroy -var-file="environments\dev\variables.tfvars" -auto-approve
 ```
 
 <!-- Links -->
