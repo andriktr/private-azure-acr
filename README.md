@@ -29,7 +29,7 @@ For terraform configuration use the following variable files
 
 * [terraform/environments/dev/variables.tfvars](terraform/environement/dev/variables.tfvars) - Describes unique values for dev environment
   
-* `terraform/environments/<any environemnt dir>/variables.tfvars` - Create a directory for your specific environment like stage, prod etc.
+* `terraform/environments/<any environment dir>/variables.tfvars` - Create a directory for your specific environment like stage, prod etc.
 
 * [terraform/variables.tf](terraform/variables.tf) - Describes all variables and sets default values which are common for all environments
 
