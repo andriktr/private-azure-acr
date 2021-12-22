@@ -46,7 +46,7 @@ acr_private_endpoint_subnet_name | Name of the subnet where ACR private endpoint
 acr_private_endpoint_subnet_cidr | CIDR of the subnet where ACR private endpoint should be provisioned | string | ""
 acr_sku | SKU of the Azure Container Registry | string | "Premium"
 acr_name | Name of the Azure Container Registry | string | ""
-additional_source_vnets | Map of additional source virtual networks to be linked to the ACR's private DNS zone". `vnet_name` - name of the vnet which should be linked to azure private DNS. `vnet_id` - virtual network id which should be linked to azure private DNS you can grep a vnet id with azure cli `az network vnet show --name <vnet name> --resource-group <vnet resource group name> --query id -otsv` | map(object) | {}
+additional_source_vnets | Map of additional source virtual networks to be linked to the ACR's private DNS zone and peered to ACR private endpoint VNet".`vnet_resource_group_name` - name of the resource group where source VNet is deployed. `vnet_name` - name of the vnet which should be linked to azure private DNS. `vnet_id` - virtual network id which should be linked to azure private DNS you can grep a vnet id with azure cli `az network vnet show --name <vnet name> --resource-group <vnet resource group name> --query id -otsv` | map(object) | {}
 
 ## Test
 
@@ -69,7 +69,7 @@ terraform init -backend-config="environments\dev\backend-config.tfvars" -backend
 terraform plan -var-file="environments\dev\variables.tfvars"
 ```
 
-## Deployment
+## Deploy
 
 In order to deploy terraform configuration you can use the following commands:
 
@@ -81,7 +81,7 @@ terraform apply -var-file="environments\dev\variables.tfvars" --auto-approve
 
 * If your AKS cluster is provisioned in a separate vNet then you need to link a private DNS used for the ACR private endpoint to that vNet. Same is valid for all other vNets from which you would like to resolve ACR. If you would like to link any additional vNets with ACR private DNS use this [module](terraform/modules/dns-vnet-link/)
 
-* If you disable public access for your ACR then you need to make sure that you are able to connect to your ACR private endpoint. For example you have ExpressRoute connection to your ACR private endpoint VNet or if this connection is within Azure Network you have a peering between your ACR private endpoint VNet and VNet from which you would like to access ACR.
+* If you disable public access for your ACR then you need to make sure that you are able to connect to your ACR private endpoint. For example you have ExpressRoute connection to your ACR private endpoint VNet or if this connection is within Azure Network you have a peering between your ACR private endpoint VNet and VNet from which you would like to access ACR. You can setup peering by using this [module](terraform/modules/vnet-peering/)
 
 ## Remove
 

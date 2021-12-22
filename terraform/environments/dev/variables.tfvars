@@ -21,8 +21,9 @@ acr_private_endpoint_subnet_name = ""
 acr_name = ""
 
 additional_source_vnets = {
-  "aks-vnet": {
-      "vnet_name": "",
-      "vnet_id": ""  
+  "aks-vnet" = {
+      "vnet_resource_group+name" = "",
+      "vnet_name" = "",
+      "vnet_id" = ""  
   }
 }

@@ -71,6 +71,7 @@ variable "additional_source_vnets" {
   description = "Map of additional source virtual networks to be linked to the ACR's private DNS zone. Comment this out if you don't need to link additional source virtual networks."
 
   type = map(object({
+        vnet_resource_group_name = string
         vnet_name       = string
         vnet_id         = string
         })
@@ -79,10 +80,12 @@ variable "additional_source_vnets" {
   # Example:
   # "additional_source_vnets": {
   #   "vnet1": {
+  #       "vnet_resource_group_name": "rg1",
   #       "vnet_name": "vnet1",
   #       "vnet_id": "vnet1-id"  
   #   },
   #   "vnet2": {
+  #       "vnet_resource_group_name": "rg2",
   #       "vnet_name": "vnet2",
   #       "vnet_id": "vnet2-id"  
   #   },
