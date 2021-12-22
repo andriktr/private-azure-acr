@@ -85,12 +85,12 @@ resource "azurerm_private_endpoint" "acr_private_endpoint" {
 module "add_dns_vnet_link" {
   source = "./modules/dns-vnet-link"
   
-  for_each                     = var.additional_source_vnets
-  vnet_name                    = each.value.vnet_name
-  vnet_id                      = each.value.vnet_id
-  acr_resource_group_name      = azurerm_resource_group.acr_resource_group.name
-  acr_private_dns_zone_name    = azurerm_private_dns_zone.acr_private_dns_zone.name
-  tags                         = var.tags
+  for_each              = var.additional_source_vnets
+  vnet_name             = each.value.vnet_name
+  vnet_id               = each.value.vnet_id
+  resource_group_name   = azurerm_resource_group.acr_resource_group.name
+  private_dns_zone_name = azurerm_private_dns_zone.acr_private_dns_zone.name
+  tags                  = var.tags
 }
 
 # Load this module if you want to peer ACR private endpoint vnet with another VNet(-s)

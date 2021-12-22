@@ -46,7 +46,7 @@ acr_private_endpoint_subnet_name | Name of the subnet where ACR private endpoint
 acr_private_endpoint_subnet_cidr | CIDR of the subnet where ACR private endpoint should be provisioned | string | ""
 acr_sku | SKU of the Azure Container Registry | string | "Premium"
 acr_name | Name of the Azure Container Registry | string | ""
-additional_source_vnets | Map of additional source virtual networks to be linked to the ACR's private DNS zone and peered to ACR private endpoint VNet".`vnet_resource_group_name` - name of the resource group where source VNet is deployed. `vnet_name` - name of the vnet which should be linked to azure private DNS. `vnet_id` - virtual network id which should be linked to azure private DNS you can grep a vnet id with azure cli `az network vnet show --name <vnet name> --resource-group <vnet resource group name> --query id -otsv` | map(object) | {}
+additional_source_vnets | Map of additional source virtual networks to be linked to the ACR's private DNS zone and peered to ACR private endpoint VNet.`vnet_resource_group_name` - name of the resource group where source VNet is deployed. `vnet_name` - name of the vnet which should be linked to azure private DNS. `vnet_id` - virtual network id which should be linked to azure private DNS you can grep a vnet id with azure cli `az network vnet show --name <vnet name> --resource-group <vnet resource group name> --query id -otsv` | map(object) | {}
 
 ## Test
 
