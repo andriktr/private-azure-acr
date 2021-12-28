@@ -55,7 +55,7 @@ additional_source_vnets | Map of additional source virtual networks to be linked
 Please do not forget to set `access_key` in [backend-config](/terraform/environment/dev/backend-config.tfvars) or alternatively you can retrieve storage account key with:
 
 ```bash
-export access_key=$(az storage account keys list --account-name <storage-account-name> --query [0].value` and pass directly)
+export access_key=$(az storage account keys list --account-name <storage-account-name> --query [0].value)
 ```
 
 and pass it directly to terraform command.
