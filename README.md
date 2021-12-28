@@ -50,7 +50,7 @@ additional_source_vnets | Map of additional source virtual networks to be linked
 
 ## Test
 
-> **Note:** Commands listed bellow written with assumption that you in [terraform](terraform/) directory.
+> **Note:** Commands listed bellow written with assumption that you run them from [terraform](terraform/) directory.
 
 Please do not forget to set `access_key` in [backend-config](/terraform/environment/dev/backend-config.tfvars) or alternatively you can retrieve storage account key with:
 
