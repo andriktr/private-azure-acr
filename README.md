@@ -8,9 +8,11 @@
 * [Description](#description)
 * [What will be deployed](#what-will-be-deployed)
 * [Prerequisites](#prerequisites)
-* [Configuration](#configuration)
+* [Configure](#configure)
 * [Test](#test)
-* [Deployment](#deployment)
+* [Deploy](#deploy)
+* [Important Post-Deployment Notes](#important-post-deployment-notes)
+* [Remove](#remove)
 
 <!--te-->
 
