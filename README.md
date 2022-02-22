@@ -6,8 +6,7 @@
 
 * [Table of Contents](#table-of-contents)
 * [Description](#description)
-* [What will be deployed](#what-will-be-deployed)
-* [Prerequisites](#prerequisites)
+ß* [Prerequisites](#prerequisites)
 * [Configure](#configure)
 * [Test](#test)
 * [Deploy](#deploy)
