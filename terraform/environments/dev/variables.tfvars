@@ -22,7 +22,7 @@ acr_name = ""
 
 additional_source_vnets = {
   "aks-vnet" = {
-      "vnet_resource_group+name" = "",
+      "vnet_resource_group_name" = "",
       "vnet_name" = "",
       "vnet_id" = ""  
   }
